@@ -22,4 +22,13 @@ class TestTagCustomers < Minitest::Test
     assert customers
     assert_equal 4, customers.length # Will be different depending on your shop data
   end
+
+  def test_tag_repeat_customers
+    customers = TagCustomers.new.tag_repeat_customers
+    assert customers
+    assert_equal 1, customers.length # Will be different depending on your shop data
+    customers.each do |customer|
+      assert_includes customer.tags, "repeat"
+    end
+  end
 end

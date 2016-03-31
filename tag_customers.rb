@@ -22,4 +22,18 @@ class TagCustomers
   def customers
     ShopifyAPI::Customer.all
   end
+
+  # Tags repeat customers with the tag "repeat"
+  def tag_repeat_customers
+    tagged_customers = []
+    customers.each do |customer|
+      if customer.orders_count > 1
+        customer.tags += "repeat" unless customer.tags.include?("repeat")
+        customer.save
+        tagged_customers << customer
+      end
+    end
+
+    tagged_customers
+  end
 end
