@@ -2,4 +2,6 @@
 require 'dotenv'
 Dotenv.load
 
-puts ENV['HI']
+class TagCustomers
+
+end

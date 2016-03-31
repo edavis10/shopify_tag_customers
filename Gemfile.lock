@@ -28,6 +28,7 @@ GEM
     rack (1.6.4)
     rails-observers (0.1.2)
       activemodel (~> 4.0)
+    rake (11.1.2)
     shopify_api (4.2.0)
       activeresource
       rack
@@ -43,4 +44,5 @@ DEPENDENCIES
   dotenv
   minitest
   pry
+  rake
   shopify_api
