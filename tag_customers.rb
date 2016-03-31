@@ -37,3 +37,9 @@ class TagCustomers
     tagged_customers
   end
 end
+
+# Called when the file is run on the command line, but not in a require
+if __FILE__ == $PROGRAM_NAME
+  tagged = TagCustomers.new.tag_repeat_customers
+  puts "Tagged #{tagged.length} customers with 'repeat'"
+end
