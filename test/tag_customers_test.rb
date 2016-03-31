@@ -16,4 +16,10 @@ class TestTagCustomers < Minitest::Test
     assert connection_test
     assert_equal "#{ENV['SHOP']}.myshopify.com", connection_test.domain
   end
+
+  def test_customers
+    customers = TagCustomers.new.customers
+    assert customers
+    assert_equal 4, customers.length # Will be different depending on your shop data
+  end
 end

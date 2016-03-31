@@ -17,4 +17,9 @@ class TagCustomers
   def test_connection
     return ShopifyAPI::Shop.current
   end
+
+  # Downloads the customers from Shopify
+  def customers
+    ShopifyAPI::Customer.all
+  end
 end
