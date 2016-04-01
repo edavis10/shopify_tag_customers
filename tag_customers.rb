@@ -28,8 +28,10 @@ class TagCustomers
     tagged_customers = []
     customers.each do |customer|
       if customer.orders_count > 1
-        customer.tags += "repeat" unless customer.tags.include?("repeat")
-        customer.save
+        unless customer.tags.include?("repeat")
+          customer.tags += "repeat"
+          customer.save
+        end
         tagged_customers << customer
       end
     end
